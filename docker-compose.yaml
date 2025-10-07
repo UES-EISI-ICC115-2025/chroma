@@ -1,0 +1,13 @@
+services:
+  chroma-server:
+    image: chromadb/chroma:latest
+    container_name: chroma-server
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      CHROMA_DB_IMPL: duckdb+parquet
+      CHROMA_DB_DIR: /chroma-data
+      CHROMA_SERVER_HTTP_PORT: 8000
+    volumes:
+      - /srv/chroma-data:/chroma-data
