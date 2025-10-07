@@ -7,7 +7,7 @@ services:
       - "8000:8000"
     environment:
       CHROMA_DB_IMPL: duckdb+parquet
-      CHROMA_DB_DIR: /chroma-data
+      CHROMA_DB_DIR: /data
       CHROMA_SERVER_HTTP_PORT: 8000
     volumes:
-      - /srv/chroma-data:/chroma-data
+      - /srv/chroma-data:/data
